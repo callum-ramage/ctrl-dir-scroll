@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable ctrl-dir-scroll': 'ctrl-dir-scroll:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'ctrl-dir-scroll'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'ctrl-dir-scroll:toggle' }
+      ]
+    ]
+  }
+]
