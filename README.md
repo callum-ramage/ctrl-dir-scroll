@@ -1,5 +1,7 @@
 # ctrl-dir-scroll package
 
-A short description of your package.
+This project is an [Atom](http://atom.io/) package.
 
-![A screenshot of your spankin' package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+It's meant to reproduce the Ctrl-Up & Ctrl-Down behaviour used in other editors like [Sublime](http://www.sublimetext.com/).
+
+The desired behaviour is to have Ctrl-Up scroll the page a single line up, leaving the cursor in place. When the cursor reaches the end of the page, it should scroll a single line as well to prevent it moving off the page. The same should happen for Ctrl-Down but in the opposite direction.
