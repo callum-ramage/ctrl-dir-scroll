@@ -10,7 +10,7 @@ module.exports =
       editorView = paneView.viewForItem(editor)
 
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
-      # The last visible row is a couple before the last row you can put the cursor on. I think it may have something to do with the find dialog
+      # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
       if ((editor.getCursorScreenRow() + 2) >= editorView.getLastVisibleScreenRow())
         editor.moveCursorUp(1)
 
@@ -24,7 +24,7 @@ module.exports =
       editorView = paneView.viewForItem(editor)
 
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
-      # The last visible row is a couple before the last row you can put the cursor on. I think it may have something to do with the find dialog
+      # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
       if ((editor.getCursorScreenRow() - 2) <= editorView.getFirstVisibleScreenRow())
         editor.moveCursorDown(1)
 
