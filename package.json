@@ -1,7 +1,7 @@
 {
   "name": "ctrl-dir-scroll",
   "main": "./lib/ctrl-dir-scroll",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A short description of your package",
   "activationEvents": ["ctrl-dir-scroll:scroll-up", "ctrl-dir-scroll:scroll-down"],
   "repository": "https://github.com/callum-ramage/ctrl-dir-scroll",
