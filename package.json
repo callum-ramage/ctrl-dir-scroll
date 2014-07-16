@@ -1,8 +1,8 @@
 {
-  "name": "ctrl-dir-scroll",
+  "name": "Control-Scroll",
   "main": "./lib/ctrl-dir-scroll",
   "version": "0.1.1",
-  "description": "Imitates the Ctrl+Up/Down behaviour from Sublime text",
+  "description": "Imitates the Line Up/Down behaviour from Sublime text",
   "activationEvents": [
     "ctrl-dir-scroll:scroll-up",
     "ctrl-dir-scroll:scroll-down"
