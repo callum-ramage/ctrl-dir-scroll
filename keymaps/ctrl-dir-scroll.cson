@@ -8,10 +8,18 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 
-'.workspace .editor:not(.mini)':
+'.platform-darwin .workspace .editor:not(.mini)':
+  'ctrl-alt-up': 'ctrl-dir-scroll:scroll-up'
+  'ctrl-alt-down': 'ctrl-dir-scroll:scroll-down'
+
+'.platform-linux .workspace .editor:not(.mini)':
+  'ctrl-alt-up': 'ctrl-dir-scroll:scroll-up'
+  'ctrl-alt-down': 'ctrl-dir-scroll:scroll-down'
+
+'.platform-win32 .workspace .editor:not(.mini)':
   'ctrl-up': 'ctrl-dir-scroll:scroll-up'
   'ctrl-down': 'ctrl-dir-scroll:scroll-down'
-
+  
 #'body':
 #  'ctrl-shift-up': 'editor:move-line-up'
 #  'ctrl-shift-down': 'editor:move-line-down'
