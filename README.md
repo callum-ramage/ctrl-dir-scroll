@@ -2,8 +2,8 @@
 
 This project is an [Atom](http://atom.io/) package.
 
-It's meant to reproduce the Ctrl-Up & Ctrl-Down behaviour used in other editors like [Sublime](http://www.sublimetext.com/).
+It's meant to reproduce the Line Up/Down functionality of [Sublime](http://www.sublimetext.com/) and SCI_LINESCROLLUP/DOWN functionality from [Notepad++](http://notepad-plus-plus.org/)
 
-The desired behaviour is to have Ctrl-Up scroll the page a single line up, leaving the cursor in place.
+The desired behaviour is to have Ctrl-Up (Ctrl-Alt-Up on Mac, Linux) scroll the page a single line up, leaving the cursor in place.
 When the cursor reaches the end of the page, it should scroll a single line as well to prevent it moving off the page.
-The same should happen for Ctrl-Down but in the opposite direction.
+The same should happen for Ctrl-Down (Ctrl-Alt-Up on Mac, Linux) but in the opposite direction.
