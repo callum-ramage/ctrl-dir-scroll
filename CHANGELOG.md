@@ -5,5 +5,5 @@
 ## 0.1.1 - Second Release
 * Fixed the package description
 
-## 0.1.2 - First Release
+## 0.1.2 - Third Release
 * Added operating system unique key bindings
