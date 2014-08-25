@@ -5,13 +5,17 @@ module.exports =
 
   scrollUp: ->
     editor = atom.workspace.getActiveEditor()
-    paneView = atom.workspaceView.getActivePane()
+    paneView = atom.workspaceView.getActivePaneView()
     if (editor)
       editorView = paneView.viewForItem(editor)
 
+      # editorView.getLastVisibleScreenRow() ignores the blank line on the end which causes cursor correction to behave in an
+      # undesirable manner.
+      calculatedLastRow = Math.ceil(editorView.scrollBottom() / editorView.lineHeight) - 1
+
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
-      if ((editor.getCursorScreenRow() + 2) >= editorView.getLastVisibleScreenRow())
+      while ((editor.getCursorScreenRow() + 2) >= calculatedLastRow)
         editor.moveCursorUp(1)
 
       # Scroll the editor by one lines worth of pixels
@@ -19,13 +23,13 @@ module.exports =
 
   scrollDown: ->
     editor = atom.workspace.getActiveEditor()
-    paneView = atom.workspaceView.getActivePane()
+    paneView = atom.workspaceView.getActivePaneView()
     if (editor)
       editorView = paneView.viewForItem(editor)
 
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
-      if ((editor.getCursorScreenRow() - 2) <= editorView.getFirstVisibleScreenRow())
+      while ((editor.getCursorScreenRow() - 2) <= editorView.getFirstVisibleScreenRow())
         editor.moveCursorDown(1)
 
       # Scroll the editor by one lines worth of pixels

@@ -7,3 +7,8 @@
 
 ## 0.1.2 - Third Release
 * Added operating system unique key bindings
+
+## 0.1.3 - Fourth Release
+* Changed deprecated atom.workspaceView.getActivePane() to atom.workspaceView.getActivePaneView()
+* Fixed up the procedure used to calculate the last visible screen row
+* Improved cursor position correction
