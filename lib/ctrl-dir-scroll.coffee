@@ -7,7 +7,7 @@ module.exports =
     editor = atom.workspace.getActiveEditor()
     paneView = atom.workspaceView.getActivePaneView()
     if (editor)
-      editorView = paneView.viewForItem(editor)
+      editorView = paneView.activeView
 
       # editorView.getLastVisibleScreenRow() ignores the blank line on the end which causes cursor correction to behave in an
       # undesirable manner.
@@ -25,7 +25,7 @@ module.exports =
     editor = atom.workspace.getActiveEditor()
     paneView = atom.workspaceView.getActivePaneView()
     if (editor)
-      editorView = paneView.viewForItem(editor)
+      editorView = paneView.activeView
 
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
