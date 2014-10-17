@@ -12,3 +12,6 @@
 * Changed deprecated atom.workspaceView.getActivePane() to atom.workspaceView.getActivePaneView()
 * Fixed up the procedure used to calculate the last visible screen row
 * Improved cursor position correction
+
+## 0.1.4 - Fifth Release
+* Updated to work with Atom version 0.136.0 onwards.
