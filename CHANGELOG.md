@@ -13,5 +13,7 @@
 * Fixed up the procedure used to calculate the last visible screen row
 * Improved cursor position correction
 
-## 0.1.4 - Fifth Release
+## 0.1.4 - Skipped due to apm bug
+
+## 0.1.5 - Fifth Release
 * Updated to work with Atom version 0.136.0 onwards.
