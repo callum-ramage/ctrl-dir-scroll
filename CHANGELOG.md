@@ -17,3 +17,6 @@
 
 ## 0.1.5 - Fifth Release
 * Updated to work with Atom version 0.136.0 onwards.
+
+## 0.1.6 - Sisth Release
+* Fixed an infinite loop that could trigger with scroll past end enabled.
