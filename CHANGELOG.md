@@ -20,5 +20,8 @@
 
 ## 0.1.6 - Skipped due to a bad internet connection
 
-## 0.1.7 - Sisth Release
+## 0.1.7 - Sixth Release
 * Fixed an infinite loop that could trigger with scroll past end enabled.
+
+## 0.1.8 - Seventh Release
+* Updating deprecated selectors
