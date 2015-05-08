@@ -1,7 +1,7 @@
 module.exports =
   activate: (state) ->
-    atom.workspaceView.command "ctrl-dir-scroll:scroll-up", => @scrollUp()
-    atom.workspaceView.command "ctrl-dir-scroll:scroll-down", => @scrollDown()
+    atom.commands.add 'atom-workspace', "ctrl-dir-scroll:scroll-up", => @scrollUp()
+    atom.commands.add 'atom-workspace', "ctrl-dir-scroll:scroll-down", => @scrollDown()
 
   scrollUp: ->
     editor = atom.workspace.getActiveEditor()
