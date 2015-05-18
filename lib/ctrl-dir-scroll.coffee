@@ -16,7 +16,7 @@ module.exports =
       # Check if the cursor is beyond the end of the page. If it is then move it up one line
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
       while ((editor.getCursorScreenPosition().row + 2) >= calculatedLastRow)
-        editor.moveCursorUp(1)
+        editor.moveUp(1)
 
       # Scroll the editor by one lines worth of pixels
       editorView.scrollTop(editorView.scrollTop() - editorView.lineHeight)
@@ -32,7 +32,7 @@ module.exports =
       prevRow = editor.getCursorScreenPosition().row - 1
       while (((editor.getCursorScreenPosition().row - 2) <= editorView.getFirstVisibleScreenRow()) && (editor.getCursorScreenPosition().row != prevRow))
         prevRow = editor.getCursorScreenPosition().row
-        editor.moveCursorDown(1)
+        editor.moveDown(1)
 
       # Scroll the editor by one lines worth of pixels
       editorView.scrollTop(editorView.scrollTop() + editorView.lineHeight)
