@@ -4,7 +4,7 @@ module.exports =
     atom.commands.add 'atom-workspace', "ctrl-dir-scroll:scroll-down", => @scrollDown()
 
   scrollUp: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     paneView = atom.workspaceView.getActivePaneView()
     if (editor)
       editorView = paneView.activeView
@@ -22,7 +22,7 @@ module.exports =
       editorView.scrollTop(editorView.scrollTop() - editorView.lineHeight)
 
   scrollDown: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     paneView = atom.workspaceView.getActivePaneView()
     if (editor)
       editorView = paneView.activeView
