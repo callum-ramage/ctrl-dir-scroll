@@ -1,7 +1,7 @@
 {
   "name": "ctrl-dir-scroll",
   "main": "./lib/ctrl-dir-scroll",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Imitates the Line Up/Down behaviour from Sublime text",
   "activationCommands": {
     "atom-text-editor": [
