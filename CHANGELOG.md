@@ -25,3 +25,6 @@
 
 ## 0.1.8 - Seventh Release
 * Updating deprecated selectors
+
+## 0.2.0 - Eighth Release
+* Atom v1.0 compliant thanks to [harai](https://github.com/harai)

@@ -7,3 +7,5 @@ It's meant to reproduce the Line Up/Down functionality of [Sublime](http://www.s
 The desired behaviour is to have Ctrl-Up (Ctrl-Alt-Up on Mac, Linux) scroll the page a single line up, leaving the cursor in place.
 When the cursor reaches the end of the page, it should scroll a single line as well to prevent it moving off the page.
 The same should happen for Ctrl-Down (Ctrl-Alt-Up on Mac, Linux) but in the opposite direction.
+
+Atom version 1.0 compliant thanks to [harai](https://github.com/harai)
