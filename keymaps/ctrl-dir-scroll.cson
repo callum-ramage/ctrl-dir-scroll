@@ -11,15 +11,18 @@
 '.platform-darwin atom-workspace atom-text-editor:not(.mini)':
   'ctrl-alt-up': 'ctrl-dir-scroll:scroll-up'
   'ctrl-alt-down': 'ctrl-dir-scroll:scroll-down'
+  'ctrl-alt-shift-up': 'ctrl-dir-scroll:scroll-up-big'
+  'ctrl-alt-shift-down': 'ctrl-dir-scroll:scroll-down-big'
 
 '.platform-linux atom-workspace atom-text-editor:not(.mini)':
-  'ctrl-alt-up': 'ctrl-dir-scroll:scroll-up'
-  'ctrl-alt-down': 'ctrl-dir-scroll:scroll-down'
+  'ctrl-up': 'ctrl-dir-scroll:scroll-up'
+  'ctrl-down': 'ctrl-dir-scroll:scroll-down'
+  'ctrl-shift-up': 'ctrl-dir-scroll:scroll-up-big'
+  'ctrl-shift-down': 'ctrl-dir-scroll:scroll-down-big'
 
 '.platform-win32 atom-workspace atom-text-editor:not(.mini)':
   'ctrl-up': 'ctrl-dir-scroll:scroll-up'
   'ctrl-down': 'ctrl-dir-scroll:scroll-down'
+  'ctrl-shift-up': 'ctrl-dir-scroll:scroll-up-big'
+  'ctrl-shift-down': 'ctrl-dir-scroll:scroll-down-big'
 
-#'body':
-#  'ctrl-shift-up': 'editor:move-line-up'
-#  'ctrl-shift-down': 'editor:move-line-down'
