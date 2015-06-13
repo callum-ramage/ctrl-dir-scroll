@@ -14,4 +14,4 @@ When the cursor reaches the end of the page, it should scroll a single line as w
 Also have a look at [line-jumper](https://atom.io/packages/line-jumper) which allows you to move the cursor 10 lines at a time.
 
 Atom version 1.0 compliant thanks to [harai](https://github.com/harai)
-
+Multiple line jumping thanks to [kankaristo](https://github.com/kankaristo)

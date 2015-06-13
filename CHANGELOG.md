@@ -28,3 +28,7 @@
 
 ## 0.2.0 - Eighth Release
 * Atom v1.0 compliant thanks to [harai](https://github.com/harai)
+
+## 0.2.1 - Ninth Release thanks to [kankaristo](https://github.com/kankaristo)
+* Added the ability to skip multiple lines at a time.
+* Changed the default Linux key combination to ctrl-up/down.
