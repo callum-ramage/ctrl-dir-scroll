@@ -46,9 +46,10 @@ module.exports =
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
       # Check if the cursor will be beyond the end of the page. If it will be then move it up the required number of lines to keep it on the page
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
-      cursorOffset = editor.getCursorScreenPosition().row - editor.getVisibleRowRange()[0] - 2
-      if keepCursorInView && (cursorOffset <= amount)
-        editor.moveDown(amount - cursorOffset)
+      if editor.getCursorScreenPosition().row > 0
+        cursorOffset = editor.getCursorScreenPosition().row - editor.getVisibleRowRange()[0] - 2
+        if keepCursorInView && (cursorOffset <= amount)
+          editor.moveDown(amount - cursorOffset)
 
       # Scroll the editor by amount lines worth of pixels
       editor.setScrollTop(editor.getScrollTop() + editor.getLineHeightInPixels() * amount)
