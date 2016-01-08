@@ -25,12 +25,13 @@ module.exports =
 
   scrollUp: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
-    if (editor)
+    editorElement = atom.views.getView(editor)
+    if (editor && editor.getScreenLineCount() > 1)
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
 
       # editor.getVisibleRowRange()[0] ignores the blank line on the end which causes cursor correction to behave in an
       # undesirable manner.
-      calculatedLastRow = Math.ceil(editor.getScrollBottom() / editor.getLineHeightInPixels()) - Math.min(amount, editor.getVisibleRowRange()[0])
+      calculatedLastRow = Math.ceil(editorElement.getScrollBottom() / editor.getLineHeightInPixels()) - Math.min(amount, editor.getVisibleRowRange()[0])
       # Check if the cursor will be beyond the end of the page. If it will be then move it up the required number of lines to keep it on the page
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
       cursorOffset = editor.getCursorScreenPosition().row - calculatedLastRow + 2
@@ -38,11 +39,12 @@ module.exports =
         editor.moveUp(cursorOffset + 1)
 
       # Scroll the editor by amount lines worth of pixels
-      editor.setScrollTop(editor.getScrollTop() - editor.getLineHeightInPixels() * amount)
+      editorElement.setScrollTop(editorElement.getScrollTop() - editor.getLineHeightInPixels() * amount)
 
   scrollDown: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
-    if (editor)
+    editorElement = atom.views.getView(editor)
+    if (editor && editor.getScreenLineCount() > 1)
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
       # Check if the cursor will be beyond the end of the page. If it will be then move it up the required number of lines to keep it on the page
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.
@@ -51,4 +53,4 @@ module.exports =
         editor.moveDown(amount - cursorOffset)
 
       # Scroll the editor by amount lines worth of pixels
-      editor.setScrollTop(editor.getScrollTop() + editor.getLineHeightInPixels() * amount)
+      editorElement.setScrollTop(editorElement.getScrollTop() + editor.getLineHeightInPixels() * amount)

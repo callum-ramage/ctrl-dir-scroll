@@ -32,3 +32,7 @@
 ## 0.2.1 - Ninth Release thanks to [kankaristo](https://github.com/kankaristo)
 * Added the ability to skip multiple lines at a time.
 * Changed the default Linux key combination to ctrl-up/down.
+
+## 0.2.2 - Tenth Release
+* Fixed a bug causing big scroll to not work.
+* Fixed a bug when the text editor only had one line.
