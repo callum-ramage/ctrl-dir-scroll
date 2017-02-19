@@ -26,7 +26,7 @@ module.exports =
   scrollUp: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
     editorElement = atom.views.getView(editor)
-    if (editor && editor.getScreenLineCount() > 1)
+    if (editor && editor.getScreenLineCount() > 1 && (editor.getScreenLineCount() > editor.rowsPerPage || editor.scrollPastEnd))
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
 
       # editor.getVisibleRowRange()[0] ignores the blank line on the end which causes cursor correction to behave in an
@@ -44,7 +44,7 @@ module.exports =
   scrollDown: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
     editorElement = atom.views.getView(editor)
-    if (editor && editor.getScreenLineCount() > 1)
+    if (editor && editor.getScreenLineCount() > 1 && (editor.getScreenLineCount() > editor.rowsPerPage || editor.scrollPastEnd))
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
       # Check if the cursor will be beyond the end of the page. If it will be then move it up the required number of lines to keep it on the page
       # The default behaviour of the editor is to keep the cursor a couple of lines within the screen. We are replicating that.

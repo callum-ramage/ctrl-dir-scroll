@@ -36,3 +36,6 @@
 ## 0.2.2 - Tenth Release
 * Fixed a bug causing big scroll to not work.
 * Fixed a bug when the text editor only had one line.
+
+## 0.2.3 - Eleventh Release
+* Fixed a bug when scroll past end is disabled and the document is smaller than the editor size.
