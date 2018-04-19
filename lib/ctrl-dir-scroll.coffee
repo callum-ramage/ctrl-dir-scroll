@@ -25,6 +25,10 @@ module.exports =
 
   scrollUp: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
+    console.log(editor.autoIndent)
+    editor.autoIndent = false
+    # editor.Update({autoIndent: false})
+    console.log(editor.autoIndent)
     editorElement = atom.views.getView(editor)
     if (editor && editor.getScreenLineCount() > 1 && (editor.getScreenLineCount() > editor.getRowsPerPage() || editor.scrollPastEnd))
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
