@@ -12,6 +12,11 @@ module.exports =
       maximum: 1000
       description: 'Number of lines to move on a "big" scroll'
       order: 2
+    disableIndent:
+      type: 'boolean'
+      default: false
+      description: 'Prevent auto indentation from occuring during scroll events'
+      order: 3
 
   activate: (state) ->
     atom.commands.add 'atom-workspace', "ctrl-dir-scroll:scroll-up", =>
@@ -25,11 +30,11 @@ module.exports =
 
   scrollUp: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
-    console.log(editor.autoIndent)
-    editor.autoIndent = false
-    # editor.Update({autoIndent: false})
-    console.log(editor.autoIndent)
     editorElement = atom.views.getView(editor)
+    disableIndent = atom.config.get 'ctrl-dir-scroll.disableIndent'
+    oldIndent = editor.autoIndent
+    if (disableIndent)
+      editor.autoIndent = false
     if (editor && editor.getScreenLineCount() > 1 && (editor.getScreenLineCount() > editor.getRowsPerPage() || editor.scrollPastEnd))
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
 
@@ -44,10 +49,16 @@ module.exports =
 
       # Scroll the editor by amount lines worth of pixels
       editorElement.setScrollTop(editorElement.getScrollTop() - editor.getLineHeightInPixels() * amount)
+    if (disableIndent)
+      editor.autoIndent = oldIndent
 
   scrollDown: (amount) ->
     editor = atom.workspace.getActiveTextEditor()
     editorElement = atom.views.getView(editor)
+    disableIndent = atom.config.get 'ctrl-dir-scroll.disableIndent'
+    oldIndent = editor.autoIndent
+    if (disableIndent)
+      editor.autoIndent = false
     if (editor && editor.getScreenLineCount() > 1 && (editor.getScreenLineCount() > editor.getRowsPerPage() || editor.scrollPastEnd))
       keepCursorInView = atom.config.get 'ctrl-dir-scroll.keepCursorInView'
       # Check if the cursor will be beyond the end of the page. If it will be then move it up the required number of lines to keep it on the page
@@ -58,3 +69,5 @@ module.exports =
 
       # Scroll the editor by amount lines worth of pixels
       editorElement.setScrollTop(editorElement.getScrollTop() + editor.getLineHeightInPixels() * amount)
+    if (disableIndent)
+      editor.autoIndent = oldIndent
